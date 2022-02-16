@@ -1,11 +1,14 @@
 package com.safari.todo.controller;
 
+import com.safari.todo.config.aspect.MethodDurationLog;
 import com.safari.todo.config.security.JwtTokenUtil;
 import com.safari.todo.dto.AuthRequestDto;
 import com.safari.todo.dto.AuthResponseDto;
 import com.safari.todo.model.User;
 import com.safari.todo.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -27,6 +30,7 @@ public class AuthController {
     private final JwtTokenUtil jwtTokenUtil;
 
     @PostMapping("login")
+    @MethodDurationLog
     public ResponseEntity<Object> login(@RequestBody @Valid AuthRequestDto request) {
         try {
             Authentication authenticate = authenticationManager
