@@ -29,6 +29,9 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<UserRole> userRoles;
 
+    @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
+    private List<Task> tasks;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         var authorities = new HashSet<GrantedAuthority>();
