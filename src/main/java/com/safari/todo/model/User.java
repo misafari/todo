@@ -26,7 +26,7 @@ public class User implements UserDetails {
     private String password;
     private boolean deleted;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<UserRole> userRoles;
 
     @Override

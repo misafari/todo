@@ -6,7 +6,6 @@ import com.safari.todo.model.UserRole;
 import com.safari.todo.repository.UserRoleRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
